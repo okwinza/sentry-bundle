@@ -1,0 +1,26 @@
+{
+    "name": "citepolitique/sentry",
+    "description": "Sentry integration for Symfony",
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Titouan Galopin",
+            "email": "galopintitouan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CitePolitique\\Sentry\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "monolog/monolog": "^1.24",
+        "sentry/sentry": "^1.10",
+        "symfony/framework-bundle": "^4.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2"
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="false" />
+
+        <service id="citepolitique.sentry.client" class="Raven_Client">
+            <argument>%citepolitique.sentry.dsn%</argument>
+        </service>
+
+        <service id="citepolitique.sentry.monolog_handler"
+                 class="CitePolitique\Sentry\Logging\SentryHandler"
+                 public="true">
+            <argument type="service" id="citepolitique.sentry.client" />
+        </service>
+
+        <service id="citepolitique.sentry.activation_strategy"
+                 class="CitePolitique\Sentry\Logging\ActivationStrategy"
+                 public="true">
+            <argument>%citepolitique.sentry.action_level%</argument>
+            <argument>%citepolitique.sentry.ignored_http_codes%</argument>
+        </service>
+    </services>
+</container>

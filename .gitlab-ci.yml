@@ -1,11 +1,7 @@
-image: php:7.3-cli-alpine
+image: php:7.2-cli-alpine
 
 before_script:
     - export DEBIAN_FRONTEND=noninteractive
-
-cache:
-    paths:
-        - vendor
 
 stages:
     - test

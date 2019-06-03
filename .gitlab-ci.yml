@@ -12,8 +12,6 @@ stages:
 
 phpcs:
     stage: test
-    except:
-        - master
     script:
         - wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.13.1/php-cs-fixer.phar
         - php php-cs-fixer.phar fix --dry-run --diff

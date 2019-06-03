@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('sentry');
         $treeBuilder->getRootNode()
             ->children()
-                ->scalarNode('dsn')->isRequired()->end()
+                ->scalarNode('dsn')->defaultNull()->end()
                 ->scalarNode('action_level')->defaultValue(Logger::ERROR)->end()
                 ->arrayNode('ignored_http_codes')
                     ->prototype('variable')->end()
